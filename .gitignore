@@ -1,0 +1,25 @@
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.log
+
+# build artifacts
+build/
+dist/
+*.spec
+
+# app runtime outputs
+output/
+progress.json
+settings.json
+
+# editor settings
+.idea/
+.vscode/
+
+# temp
+test.py
