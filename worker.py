@@ -65,6 +65,7 @@ class BatchWorker(QThread):
         progress_path = output_dir / "progress.json"
         progress = self._load_progress(progress_path)
 
+        self.log_message.emit("正在扫描文件夹...")
         files = self._collect_files(self.input_dir, output_dir)
         total = len(files)
         if total == 0:
@@ -72,6 +73,7 @@ class BatchWorker(QThread):
             self.finished_all.emit()
             return
 
+        self.log_message.emit(f"找到 {total} 个 .docx 文件。")
         processed = 0
         for doc_path in files:
             if self._stop_requested:
